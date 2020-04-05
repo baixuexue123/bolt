@@ -340,6 +340,7 @@ func (db *DB) mmapSize(size int) (int, error) {
 }
 
 // init creates a new database file and initializes its meta pages.
+// 向数据文件中写入4个page: page0和page1 meta-page, page3 freelist, page4 leaf page
 func (db *DB) init() error {
 	// Set the page size to the OS page size.
 	db.pageSize = os.Getpagesize()

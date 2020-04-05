@@ -27,6 +27,7 @@ const (
 
 type pgid uint64
 
+// 一个最小的存储单元
 type page struct {
 	id       pgid
 	flags    uint16
